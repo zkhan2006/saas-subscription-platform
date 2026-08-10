@@ -3,9 +3,11 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const apiKey = process.env.STRIPE_SECRET_KEY || 'sk_test_placeholder_key';
-
-export const stripe = new Stripe(apiKey, {
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
   apiVersion: '2025-02-24.acacia' as any,
   typescript: true,
 });
+
+export default stripe;
+
+
